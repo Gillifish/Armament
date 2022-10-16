@@ -1,6 +1,8 @@
 package com.spicerunners.armament;
 
 import com.mojang.logging.LogUtils;
+import com.spicerunners.armament.init.ArmamentEntities;
+import com.spicerunners.armament.init.ArmamentItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -37,6 +39,9 @@ public class ArmamentMain
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        ArmamentItems.REGISTRY.register(modEventBus);
+        ArmamentEntities.REGISTRY.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
