@@ -17,7 +17,7 @@ import net.minecraft.world.entity.Entity;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ArmamentEntities {
     public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, ArmamentMain.MODID);
-    public static final RegistryObject<EntityType<MissileEntity>> MISSILE = register("projectile_missile_stick",
+    public static final RegistryObject<EntityType<MissileEntity>> MISSILE = register("projectile_missile",
             EntityType.Builder.<MissileEntity>of(MissileEntity::new, MobCategory.MISC).setCustomClientFactory(MissileEntity::new)
                     .setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
